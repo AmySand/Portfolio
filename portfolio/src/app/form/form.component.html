@@ -1,0 +1,78 @@
+<h1>Let's chat!</h1>
+  <p *ngIf="submitted==true">
+   <span class="submitted">Thanks for submitting the form, {{name.firstName}}!</span> <br>
+  Submission:<br>
+ {{name.firstName}} {{name.lastName}} <br>
+ {{name.email}}<br>
+ {{name.message}}<br>
+ Reason for contacting: {{name.reason}}<br>
+ {{name.date}}<br>
+</p>
+<form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+
+  <p>
+    <mat-form-field class="width100" appearance="outline">
+      <mat-label>First Name</mat-label>
+      <textarea required matInput [(ngModel)]="name.firstName" name="firstName"></textarea>
+    </mat-form-field>
+    <mat-form-field class="width100"  appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <textarea required matInput [(ngModel)]="name.lastName" name="last"></textarea>
+    </mat-form-field>
+ <br>
+    <mat-form-field class="width100"  appearance="outline">
+      <mat-label>Email</mat-label>
+      <input required matInput type="email" ngModel email [(ngModel)]="name.email" name="email">
+    </mat-form-field>
+<br>
+      <mat-form-field class="width100" appearance="outline">
+        <mat-label>Message</mat-label>
+        <textarea name="message" matInput [(ngModel)]="name.message"></textarea>
+      </mat-form-field>
+    </p>
+  <p>
+    <mat-radio-group class="width100"  aria-label="Reason for contact:" layout="row" [(ngModel)]="name.reason" name="reason">
+      <mat-radio-button value="comment">Comment</mat-radio-button>
+      <mat-radio-button value="question">Question</mat-radio-button>
+      <mat-radio-button value="meeting">Schedule a Meeting</mat-radio-button>
+    </mat-radio-group>
+
+  </p>
+
+<br>
+   
+      <mat-form-field class="width100"  appearance="outline" *ngIf="name.reason == 'meeting'">
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="name.date" name="date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+  
+  <p>
+    <button type="submit" mat-fab>Submit</button>
+  </p>
+</form>
+<!-- First Name validation -->
+<!-- <div *ngIf="name.first.invalid && (firstName.dirty || firstName.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="firstName.errors.required">
+    First Name is required.
+  </div>
+</div>
+<!-- Last Name validation -->
+<!-- <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="lastName.errors.required">
+   Last Name is required.
+  </div>
+</div>
+Email validation -->
+<!-- <div *ngIf="email.invalid && (email.dirty || email.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="email.errors.required">
+  Email is required.
+  </div>
+</div> -->

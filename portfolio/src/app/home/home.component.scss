@@ -1,0 +1,25 @@
+
+*{
+    text-align: center;
+}
+span{
+    font-family:'Lobster', cursive;
+    font-size: 110%;
+ }
+ .homeImg{
+        box-shadow:  10px 10px #ffd740;
+        margin: 5px;
+        border-radius: 50%;
+    
+ }
+ .clear{
+     clear: both;
+ }
+ .flex{
+    display: flex; 
+    flex-flow: row nowrap;
+    align-content: center;
+ }
+ .spacing{
+     margin: 20px;
+ }

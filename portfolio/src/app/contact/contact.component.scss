@@ -1,0 +1,25 @@
+// *{
+//     width: 100%;
+//     text-align: center;
+
+.flex{
+    display:flex;
+}
+h2{
+    color: #513593;
+}
+.contact{
+width: 40%;
+}
+.center{
+    text-align: center;
+}
+
+.flexSpace{
+    flex: 1 1 auto;
+}
+.contactImg{
+    box-shadow:  10px 10px #ffd740;
+    margin: 5px;
+    border-radius: 50%;
+}

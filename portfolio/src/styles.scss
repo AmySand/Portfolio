@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+html, body { height: 100%; }
+h1, h2, h3{ margin: 0; font-family:'Lobster', cursive; background-color: #EFC7E5;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #EFC7E5;}
+
+.active{
+    Color: #402189;;
+    text-decoration: none;
+}
