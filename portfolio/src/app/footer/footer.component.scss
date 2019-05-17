@@ -1,8 +1,8 @@
 .footerContainer{
     background-color:#ffd740;
     text-align: center;
-    // position: fixed;
-    // bottom: 0;
+    position: sticky;
+    bottom: 0;
     width: calc(100% - 32px);
    
 }
